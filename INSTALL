@@ -7,7 +7,7 @@ base directory of the Pana distribution:
 
 
    % ./configure --prefix=`kde-config --prefix` --disable-debug --disable-warnings
-	# Assuming that works 
+	# Assuming that works
    % make
    % make install
 

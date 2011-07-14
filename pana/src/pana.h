@@ -1,5 +1,5 @@
 /*
-* copyright (C) 2010 Free Software Foundation, Inc.
+* copyright (C) 2011 Free Software Foundation, Inc.
 *
 * This file is part of Pana.
 *
@@ -363,6 +363,6 @@ namespace Pana
 
 
 // Update this when necessary
-#define APP_VERSION "1.4.17"
+#define APP_VERSION "1.4.18"
 
 #endif

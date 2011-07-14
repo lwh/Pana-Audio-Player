@@ -1,51 +1,33 @@
-Guidelines for Hacking Pana 
+Guidelines for Hacking Pana
 
 Patches are very very welcome. As are bug reports on problems with functionality.
 It is our goal to retain all existing functions but as we are not using all the
 options in the program, it makes testing hard. Especially for portable players -
 so if something acts up please tell us. Please run diffs against trunk or make a note
-of which source version you used. 
+of which source version you used.
 
-You must agree any patches you send are under GPLv2, or GPLv2 or later - it will depend 
-on the source file(s) you have patched. GPLv2+ is preferred in case we ever try to 
+You must agree any patches you send are under GPLv2, or GPLv2 or later - it will depend
+on the source file(s) you have patched. GPLv2+ is preferred in case we ever try to
 switch to a newer version. For the docs folder the content is licensed under GFDL 1.3
 or laterPlease provide your name and the date, and indicate whether you want the file
 (c) you and/or FSF. If you add yourself to the top notices don't modify the other
 notices even if they are written poorly or don't make sense - they may be left that
 way intentionally.
 
-http://pana.bunnies.net/ . pana@bunnies.net accepts comments, bug reports, 
+http://pana.bunnies.net/ . pana@bunnies.net accepts comments, bug reports,
 suggestions, patches.
 
 
 Code guidelines:
 
-* Tabs, not spaces. 
+* Tabs, not spaces.
 * Indentation is 1 tab
-* Lines should be limited to 90 characters 
 * For pointer and reference variable declarations put a space between the type
   and the * or & and no space before the variable name.
 * For all language constructs except function and class definitions, put the 
   { on the same line please. (This is flexible).
 * Functions and class definitions must have their { on the next line.
 * A function implementation's return type is on its own line.
-* pana.h contains some helpful macros, foreach and foreachType.  Use them,
-  they improve coding style and readability.
-
-Example:
-
- | bool 
- | MyClass::myMethod( QPtrList<QListViewItem> items, const QString &name )
- | {
- |     if( items.isEmpty() )
- |         return false;
- |
- |     foreachType( QPtrList<QListViewItem>, items )
- |     {
- |         (*it)->setText( 0, name );
- |         debug() << "Setting item name: " << name << endl;
- |     }
- | }
 
 Header includes should be listed in the following order:
 	- Pana includes
@@ -59,27 +41,10 @@ Includes in a header file should be kept to the absolute minimum, as to keep com
 low. This can be achieved by using "forward declarations" instead of includes, like
 "class QListView;" Forward declarations work for pointers and const references.
 
-TIP:
-Kate/KDevelop users can sort the headers automatically. Select the lines you want to sort,
-then Tools -> Filter Selection Through Command -> "sort".
-
-
-Example:
-
- | #include "pana.h"
- | #include "debug.h"
- | #include "playlist.h"
- |
- | #include "kdialogbase.h"    //baseclass
- | #include "kpushbutton.h"    //see function...
- |
- | #include "qlistviewitem.h"
- | #include "qwidget.h"
-
 
 Comments
 --------
-Comment your code. Explain strange behaviour and hacks/workarounds. Explain classes and functions that are not self-explanatory. Provide a description of what a file is for at the beginning please.
+Comment your code. Explain hacks and workarounds. Explain classes and functions. Provide a description of what a file is for at the beginning please.
 
 
 Header Formatting
