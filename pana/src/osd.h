@@ -1,26 +1,25 @@
 /*
+ * Copyright (C) 2011 Free Software Foundation, Inc.
+ *
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
   (at your option) any later version.
-*/
 
-/*
+
   osd.h   -  Provides an interface to a plain QWidget, which is independent of KDE (bypassed to X11)
-  begin:     Fre Sep 26 2003
-  copyright: (C) 2003 by Christian Muehlhaeuser
-  email:     chris@chris.de
+  copyright: (C) 2003 by Christian Muehlhaeuser chris@chris.de
 */
 
 #ifndef PANA_OSD_H
 #define PANA_OSD_H
 
 #include "metabundle.h"
-		
+
 #include <kpixmap.h>
 #include <qimage.h>
 #include <qvaluelist.h>
-#include <qwidget.h> //baseclass
+#include <qwidget.h>
 
 
 class OSDWidget : public QWidget
@@ -37,7 +36,7 @@ class OSDWidget : public QWidget
 
       public slots:
         /** calls setText() then show(), after setting image if needed */
-        void show( const QString &text, QImage newImage = QImage::QImage() );
+        void show( const QString &text, QImage newImage = QImage() );
         void ratingChanged( const short rating );
         void ratingChanged( const QString& path, int rating );
         void volChanged( unsigned char volume );
