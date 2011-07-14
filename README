@@ -1,25 +1,22 @@
 Pana - the audio player for people who hate change
 
 Pana is a fork of Amarok 1.4.10 please don't bug Amarok about it!
-If you currently don't have a preferred audio player use Clementine,
-it's the best player out there right now and it works on all platforms.
-http://code.google.com/p/clementine-player/
-
+If you currently don't have a preferred audio player we suggest you
+look at alternatives until Pana 2.x is out. 
 
 http://pana.bunnies.net/
-irc.freenode.net  #pana
-https://github.com/lwh/Pana-Audio-Player
+irc.freenode.net and efnet - #pana
 
 Features from Amarok 1.4:
 
 * Quick and simple drag and drop playlist creation
 * Music library (built-in SQLite, MySQL, or PostgreSQL)
-* Multiple backends supported (xine, Helix)
+* Multiple backends supported (xine, Helix, and NMM)
 * Plays many audio formats
 * 10 band equalizer
 * Automatic cover art download using Last.fm services
 * The unique and powerful stylable context browser
-* Automatic play-statistics generation
+* Automatic play-statistics generation (iRate style)
 * Full lyrics download
 * Learn about your music with integrated Wikipedia
 * Full Last.fm support
@@ -40,11 +37,11 @@ Requirements
 * KDE-Libs 3.x
 * KDE-Base 3.x
 * TagLib 1.4 or newer
-* Ruby
+* Ruby 1.8
 
-One of:
+One of: 
 * xine-lib 1.0.2 or newer ( Preferred )
-* HelixPlayer 1.0 or newer ( Unlikely to continue working )
+* HelixPlayer 1.0 or newer
 
 Optional:
 
@@ -52,14 +49,14 @@ Optional:
 * PostgreSQL 7.4
 * OpenGL accelerated X-Server
 * Libvisual 0.4.0 + SDL 1.2
-* ProjectM 0.96
-* libtunepimp 0.3
-* K3B 0.11
-* libgpod 0.4.2
+* ProjectM 0.96 (or newer)
+* libtunepimp 0.3 (or newer)
+* K3B 0.11 (or newer)
+* libgpod 0.4.2 (or newer)
 * libifp 1.0.0.2
-* libmp4v2
-* libnjb 2.2.4
-* libmtp 0.1.1
+* libmp4v2 (mpeg4ip 1.5 is recommended, faad2 is less reliable)
+* libnjb 2.2.4 (older versions may work)
+* libmtp 0.1.1 (or newer)
 * libkarma 0.0.5 && OMFS 0.6.1
 
 

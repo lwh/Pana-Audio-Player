@@ -572,7 +572,7 @@ if test "$enable_mysql" = "yes"; then
     AC_CHECK_PROG(MYSQL_CONFIG, mysql_config, yes)
 
     if test x$MYSQL_CONFIG = xyes; then
-        AC_DEFINE(USE_MYSQL, 1, [Mysql database support enabled])
+        AC_DEFINE(USE_MYSQL, 1, [MySql database support enabled])
 
         mysql_includes=`mysql_config --cflags`
         mysql_libs=`mysql_config --libs`
@@ -1473,13 +1473,19 @@ if test x$included_sqlite = xno; then
 fi
 
 if test x$pana_warning_mysql_notfound = xyes; then
+    echo " =========================="
+    echo " ===  Pana - WARNING  ========================================================"
+    echo " =========================="
     echo " ="
-    echo " = mysql_config could not be found, this means that support for Mysql"
+    echo " = mysql_config could not be found, this means that support for MySql"
     echo " = will be disabled."
     echo " ="
 fi
 
 if test x$pana_warning_postgresql_notfound = xyes; then
+    echo " =========================="
+    echo " ===  Pana - WARNING  ========================================================"
+    echo " =========================="
     echo " ="
     echo " = pg_config could not be found, this means that support for Postgresql"
     echo " = will be disabled."
@@ -1488,38 +1494,45 @@ fi
 
 if test x$no_engine = xyes; then
     all_tests=bad
-    echo " ====================================="
-    echo " ====================================="
-    echo " ======  PANA WILL NOT BE BUILT  ====="
-    echo " ====================================="
+    echo " =================================="
+    echo " ===  PANA WILL NOT BE BUILT  ====="
+    echo " =================================="
     echo " ="
-    echo " = No suitable multimedia framework was detected. You need to install"
-    echo " = the Xine or Helix framework."
+    echo " = No suitable multimedia framework was detected. You need to install at least"
+    echo " = the Xine or Helix framework as detailed in the Pana README."
     echo " ="
 fi
 
 if test x$no_pana = xyes; then
     all_tests=bad
-    echo " ====================================="
-    echo " ====================================="
-    echo " ======  PANA WILL NOT BE BUILT  ====="
-    echo " ====================================="
+    echo " =================================="
+    echo " ===  PANA WILL NOT BE BUILT ===="
+    echo " =================================="
     echo " ="
     echo " = Some mandatory dependencies are either not installed or not installed"
     echo " = correctly. See the Pana README for help with this issue. Further assistance"
     echo " = can be found at http://pana.bunnies.net or in channel pana on irc.freenode.net."
+    echo " = You will still be able to build other modules from extragear/multimedia."
     echo " ="
 
 else
 
-    echo " ======================"
-    echo " === Pana - PLUGINS ==="
-    echo " ======================"
+    echo " =========================="
+    echo " ===  Pana - PLUGINS  ========================================================"
+    echo " =========================="
 
 
     echo " ="
     echo " = The following extra functionality will NOT be included:"
 
+
+#    if test x$build_akode != xyes; then
+#        echo " =   - aKode-engine"
+#    fi
+
+#    if test x$have_gst10 != xyes; then
+#        echo " =   - GStreamer0.10-engine"
+#    fi
 
     if test x$build_xine != xyes; then
         echo " =   - xine-engine"
@@ -1528,6 +1541,10 @@ else
     if test x$build_nmm != xyes; then
         echo " =   - NMM-engine"
     fi
+
+#    if test x$build_mas != xyes; then
+#        echo " =   - MAS-engine"
+#    fi
 
     if test x$build_helix = xno; then
         echo " =   - Helix-engine"
@@ -1538,60 +1555,68 @@ else
     fi
 
     if test x$build_libvisual != xyes; then
-        echo " =   - libvisual support"
+        echo " =   - libvisual Support"
     fi
 
     if test x$enable_mysql != xyes; then
-        echo " =   - Mysql support"
+        echo " =   - MySql Support"
     fi
 
     if test x$enable_postgresql != xyes; then
-        echo " =   - Postgresql support"
+        echo " =   - Postgresql Support"
     fi
 
     if test x$have_konqsidebar != xyes; then
-        echo " =   - Konqueror sidebar"
+        echo " =   - Konqueror Sidebar"
     fi
 
     if test x$have_tunepimp != xyes; then
-        echo " =   - MusicBrainz support"
+        echo " =   - MusicBrainz Support"
     fi
 
     if test x$have_mp4v2 != xyes; then
-        echo " =   - MP4/AAC tag write support"
+        echo " =   - MP4/AAC Tag Write Support"
     fi
 
     if test x$have_libgpod != xyes; then
         if test x$have_libgpod_042 != xno; then
-            echo " =   - iPod support"
+            echo " =   - iPod Support"
         else
-            echo " =   - iPod support (at least libgpod 0.4.2 is required)"
+            echo " =   - iPod Support (at least libgpod 0.4.2 is required)"
         fi
     fi
 
     if test x$have_ifp != xyes; then
-        echo " =   - iRiver iFP support"
+        echo " =   - iRiver iFP Support"
     fi
 
     if test x$have_libnjb != xyes; then
-        echo " =   - Creative Nomad Jukebox support"
+        echo " =   - Creative Nomad Jukebox Support"
     fi
 
     if test x$have_libmtp != xyes; then
-        echo " =   - MTP device support"
+        echo " =   - MTP Device Support"
     fi
 
     if test x$have_libkarma != xyes; then
-        echo " =   - Rio Karma support"
+        echo " =   - Rio Karma Support"
     fi
 
     if test x$have_daap != xyes; then
-        echo " =   - DAAP music sharing support"
+        echo " =   - DAAP Music Sharing Support"
     fi
-
+    
     echo " ="
     echo " = The following extra functionality will be included:"
 
+
+#    if test x$build_akode = xyes; then
+#        echo " =   + aKode-engine"
+#    fi
+
+#    if test x$have_gst10 = xyes; then
+#        echo " =   + GStreamer0.10-engine"
+#    fi
 
     if test x$build_xine = xyes; then
         echo " =   + xine-engine"
@@ -1600,6 +1625,10 @@ else
     if test x$build_nmm = xyes; then
         echo " =   + NMM-engine"
     fi
+
+#    if test x$build_mas = xyes; then
+#        echo " =   + MAS-engine"
+#    fi
 
     if test x$build_helix != xno; then
         echo " =   + Helix-engine"
@@ -1614,7 +1643,7 @@ else
     fi
 
     if test x$enable_mysql = xyes; then
-        echo " =   + Mysql Support"
+        echo " =   + MySql Support"
     fi
 
     if test x$enable_postgresql = xyes; then
@@ -1648,7 +1677,7 @@ else
     if test x$have_libmtp = xyes; then
         echo " =   + MTP Device Support"
     fi
-
+    
     if test x$have_libkarma = xyes; then
         echo " =   + Rio Karma Support"
     fi
@@ -1656,7 +1685,7 @@ else
     if test x$have_daap = xyes; then
         echo " =   + DAAP Music Sharing Support"
     fi
-
+    
    echo " ="
 fi
 
@@ -1683,6 +1712,21 @@ if test -n "$kde_libs_prefix" -a -n "$given_prefix"; then
   fi
 fi
 
+if test x$GXX = "xyes" -a x$kde_have_gcc_visibility = "xyes" -a x$kde_cv_val_qt_gcc_visibility_patched = "xno"; then
+  echo ""
+  echo "Your GCC supports symbol visibility, but the patch for Qt supporting visibility"
+  echo "was not included. Therefore, GCC symbol visibility support remains disabled."
+  echo ""
+  echo "For better performance, consider including the Qt visibility supporting patch"
+  echo "located at:"
+  echo ""
+  echo "http://bugs.kde.org/show_bug.cgi?id=109386"
+  echo ""
+  echo "and recompile all of Qt and KDE. Note, this is entirely optional and"
+  echo "everything will continue to work just fine without it."
+  echo ""
+fi
+
 if test "$all_tests" = "bad"; then
   if test ! "$cache_file" = "/dev/null"; then
     echo ""
@@ -1692,6 +1736,6 @@ if test "$all_tests" = "bad"; then
   fi
 else
   echo ""
-  echo "Finished. Start make now"
+  echo "Good - your configure finished. Start make now"
   echo ""
 fi
