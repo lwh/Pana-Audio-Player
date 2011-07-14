@@ -16,10 +16,8 @@
 
 <answer>
 <para
->&pana; är en musikspelare för Unix-system (t.ex. Linux). Mer information finns i en <ulink url="http://amarok.kde.org/amarokwiki/index.php/What_is_Amarok%3F"
+>&pana; är en musikspelare för Unix-system (t.ex. Linux). Mer information finns i en <ulink url="http://pana.bunnies.net"
 >summering av dess funktioner</ulink
-> och i <ulink url="http://amarok.kde.org/index.php?set_albumName=Screenshots&amp;option=com_gallery&amp;Itemid=60&amp;include=view_album.php"
->skärmbildsgalleriet</ulink
 >.</para>
 </answer>
 
@@ -43,7 +41,7 @@
 
 <answer>
 <para
->&pana; kräver bara KDElibs inga andra grejer från KDE. Du måste alltså ha installerat KDElibs riktigt (inklusive alla binärfiler som levereras med det, eftersom &pana; behöver vissa av dem för att hitta insticksprogram och för skriptinsticksprogrammen). Vi har skrivit ett avsnitt om <ulink url="http://amarok.kde.org/amarokwiki/index.php/KDElibs_without_aRts"
+>&pana; kräver bara KDElibs inga andra grejer från KDE. Du måste alltså ha installerat KDElibs riktigt (inklusive alla binärfiler som levereras med det, eftersom &pana; behöver vissa av dem för att hitta insticksprogram och för skriptinsticksprogrammen). Vi har skrivit ett avsnitt om <ulink url="http://pana.bunnies.net"
 >hur man kompilerar ett minimalt KDElibs</ulink
 >, som kan vara användbart.</para>
 <para
